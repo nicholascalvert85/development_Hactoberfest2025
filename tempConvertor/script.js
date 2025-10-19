@@ -14,11 +14,12 @@ const calculateTemp = () => {
          return (num-32)/1.8;
     }
 
-    if(valueTemp == 'celsius'){
-        result = celToFah(numTemp)
-        document.getElementById('result').innerHTML =`${result} °Fahrenheit ` ;
-    } else if (valueTemp == 'fahrenheit') {
-        result = fahToCel(numTemp)
-        document.getElementById('result').innerHTML =`${result} °Celsius ` ;
-    } 
+
+    if (valueTemp === 'celsius') {
+        result = celToFah(numTemp).toFixed(2);
+        document.getElementById('result').innerHTML = `${numTemp} °C = ${result} °F`;
+    } else if (valueTemp === 'fahrenheit') {
+        result = fahToCel(numTemp).toFixed(2);
+        document.getElementById('result').innerHTML = `${numTemp} °F = ${result} °C`;
+    }
 }
